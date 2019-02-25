@@ -1,0 +1,54 @@
+create database TrainTicketingSystem
+
+use TrainTicketingSystem
+
+create table admindetails
+( username varchar(50),
+passwordfield varchar(30)
+);
+
+select * from  admindetails
+
+insert into admindetails (username,passwordfield)
+values ('mehjabin',123);
+
+use TrainTicketingSystem
+
+create table traindetails
+( trainid int not null primary key,
+quantity int,
+sourcestation varchar(50),
+destinationstation varchar (50),
+ticketdate varchar(40)
+);
+
+select * from traindetails
+
+
+use TrainTicketingSystem
+
+create table ticketdetails
+(
+trainid int foreign key references traindetails(trainid),
+ticketid int,
+price int,
+class varchar(20)
+);
+
+select * from ticketdetails
+
+use TrainTicketingSystem
+
+create table passengerdetails
+(passengername varchar(50),
+passengerid int ,
+trainid int,
+numberofbookedtickets int
+);
+
+select * from passengerdetails 
+
+
+
+
+
